@@ -1,8 +1,20 @@
 var Records = React.createClass({
+  getInitialState () {
+    return {
+      records: this.props.data
+    }
+  },
+
+  getDefaultProps () {
+    return {
+      records: []
+    }
+  },
+
   render () {
     return (
-      <div>
-        <h1>I hate this thing</h1>
+      <div className='records'>
+        <h2 className='title'>Records</h2>
       </div>
     )
   }
