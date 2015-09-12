@@ -4,7 +4,7 @@ var RecordForm = React.createClass({
       title: '',
       date: '',
       amount: ''
-    }
+    };
   },
 
   handleChange (e) {
@@ -15,7 +15,7 @@ var RecordForm = React.createClass({
   },
 
   valid () {
-    return this.state.title && this.state.date && this.state.amount;
+    return (this.state.title && this.state.date && this.state.amount);
   },
 
   handleSubmit (e) {
@@ -65,6 +65,6 @@ var RecordForm = React.createClass({
         </div>
         <button type='submit' className='btn btn-primary' disabled={!this.valid()}>Create Record</button>
       </form>
-    )
+    );
   }
 });
