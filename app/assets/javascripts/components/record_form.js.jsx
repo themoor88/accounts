@@ -10,7 +10,7 @@ var RecordForm = React.createClass({
   handleChange (e) {
     var name = e.target.name;
     var obj = {};
-    obj[name] = e.targe.value
+    obj[name] = e.target.value;
     this.setState(obj);
   },
 
@@ -36,7 +36,7 @@ var RecordForm = React.createClass({
       <form className='form-inline' onSubmit={this.handleSubmit}>
         <div className='form-group'>
           <input
-            type='text'
+            type='date'
             className='form-control'
             placeholder='Date'
             name='date'

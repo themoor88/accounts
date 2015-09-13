@@ -7,13 +7,14 @@ var Record = React.createClass({
 
   handleToggle (e) {
     e.preventDefault();
-    this.setState({ edit: !this.state.edit });
+    this.setState({edit: !this.state.edit});
   },
 
   handleDelete (e) {
+    e.preventDefault();
     $.ajax({
       method: 'DELETE',
-      url:'/records/' + this.props.id,
+      url:'/records/' + this.props.record.id,
       dataType: 'JSON',
       success: function () {
         this.props.handleDeleteRecord(this.props.record);
@@ -41,15 +42,12 @@ var Record = React.createClass({
   },
 
   recordRow () {
-    return(
+    return (
       <tr>
-        <td>{this.props.record.date}</td>
-        <td>{this.props.record.title}</td>
-        <td>{amountFormat(this.props.record.amount)}</td>
+        <td onClick={this.handleToggle}>{this.props.record.date}</td>
+        <td onClick={this.handleToggle}>{this.props.record.title}</td>
+        <td onClick={this.handleToggle}>{amountFormat(this.props.record.amount)}</td>
         <td>
-          <a className='btn btn-default' onClick={this.handleToggle}>
-            Edit
-          </a>
           <a className='btn btn-danger' onClick={this.handleDelete}>
             Delete
           </a>
@@ -59,10 +57,10 @@ var Record = React.createClass({
   },
 
   recordForm () {
-    return(
+    return (
       <tr>
         <td>
-          <input className='form-control' type='text' defaultValue={this.props.record.date} ref='date' />
+          <input className='form-control' type='date' defaultValue={this.props.record.date} ref='date' />
         </td>
         <td>
           <input className='form-control' type='text' defaultValue={this.props.record.title} ref='title' />
