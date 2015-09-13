@@ -23,7 +23,7 @@ var RecordForm = React.createClass({
     $.post (
       '',
       {record: this.state},
-      function(data) {
+      function (data) {
         this.props.handleNewRecord(data);
         this.setState(this.getInitialState());
       }.bind(this),
@@ -36,7 +36,7 @@ var RecordForm = React.createClass({
       <form className='form-inline' onSubmit={this.handleSubmit}>
         <div className='form-group'>
           <input
-            type='date'
+            type='text'
             className='form-control'
             placeholder='Date'
             name='date'
@@ -44,7 +44,7 @@ var RecordForm = React.createClass({
             onChange={this.handleChange} />
         </div>
 
-        <div className='form-group' onSubmit={this.handleSubmit}>
+        <div className='form-group'>
           <input
             type='text'
             className='form-control'
@@ -54,7 +54,7 @@ var RecordForm = React.createClass({
             onChange={this.handleChange} />
         </div>
 
-        <div className='form-group' onSubmit={this.handleSubmit}>
+        <div className='form-group'>
           <input
             type='number'
             className='form-control'
@@ -63,7 +63,12 @@ var RecordForm = React.createClass({
             value={this.state.amount}
             onChange={this.handleChange} />
         </div>
-        <button type='submit' className='btn btn-primary' disabled={!this.valid()}>Create Record</button>
+        <div className='form-group'>
+          <input
+            type='submit'
+            className='btn btn-primary'
+            disabled={!this.valid()} />
+        </div>
       </form>
     );
   }
