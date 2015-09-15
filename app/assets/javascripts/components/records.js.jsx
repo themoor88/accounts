@@ -1,3 +1,4 @@
+// Receiving the model from the helper in the view.
 var Records = React.createClass({
   getInitialState () {
     return {
