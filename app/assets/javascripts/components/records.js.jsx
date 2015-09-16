@@ -1,4 +1,5 @@
 // Receiving the model from the helper in the view.
+// No need to use or mention lifecycle methods here.
 var Records = React.createClass({
   getInitialState () {
     return {
