@@ -1,5 +1,6 @@
 // Receiving the model from the helper in the view.
 // No need to use or mention lifecycle methods here.
+// TODO Start to use Redux and Flux for data architecture
 var Records = React.createClass({
   getInitialState () {
     return {
