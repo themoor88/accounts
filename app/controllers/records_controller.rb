@@ -19,6 +19,7 @@ class RecordsController < ApplicationController
     if @record.update(record_params)
       render json: @record
     else
+      # Unprocessable entity is something that doesn't work.
       render json: @record.errors, status: :unprocessable_entity
     end
   end
