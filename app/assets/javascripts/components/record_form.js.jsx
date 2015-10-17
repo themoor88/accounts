@@ -7,6 +7,8 @@ var RecordForm = React.createClass({
     };
   },
 
+  // This function has to be present in order to assign the value property to a this.state value.
+  // This sets each properties of the state object every time it changes.
   handleChange (e) {
     var name = e.target.name;
     var obj = {};
