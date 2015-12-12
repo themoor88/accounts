@@ -1,3 +1,5 @@
+# All these render jsons are essentially a simple API serving json.
+# TODO: Add namespace for API versionning.
 class RecordsController < ApplicationController
   before_action :current_record, only: [:update, :destroy]
 
